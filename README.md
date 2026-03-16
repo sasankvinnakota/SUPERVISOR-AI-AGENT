@@ -1,83 +1,134 @@
-# SUPERVISOR-AI-AGENT
+Supervisor AI Agent
 
-Workflow flow in order
+A Telegram-integrated AI workflow built in n8n that receives user requests, understands intent, chooses the correct tool, performs the task, and sends the final response back to Telegram.
 
-Telegram Trigger receives message
+Workflow Flow
 
-TAKE MESSAGE HERE extracts text
+Telegram Trigger receives the incoming message
 
-Supervisor AI Agent reads request
+TAKE MESSAGE HERE extracts the text
 
-Agent checks Google Sheets contacts first
+Supervisor AI Agent reads and understands the request
 
-Agent decides whether to:
+The agent checks Google Sheets contacts first
 
-send an email,
+The agent decides whether to:
 
-schedule a meeting,
+send an email
 
-do research,
+schedule a meeting
 
-or handle a default case
+do research
 
-Proper tool is executed
+handle a default case
 
-Final result is sent back through Telegram
+The appropriate tool is executed
+
+The final result is sent back through Telegram
 
 Node-by-Node Explanation
-
 1. Telegram Trigger
 
-Starts workflow when a Telegram message arrives.
+Starts the workflow when a message is received on Telegram.
 
 2. TAKE MESSAGE HERE
 
-Extracts the message text into a cleaner field.
+Extracts the incoming Telegram message text into a cleaner field for processing.
 
 3. Supervisor AI Agent
 
-Main brain of the workflow. Decides what to do.
+Acts as the main brain of the workflow. It analyzes the user request and decides which action to perform.
 
 4. Window Buffer Memory
 
-Keeps recent conversation context.
+Stores recent conversation context so the agent can handle follow-up messages more intelligently.
 
 5. Google Gemini Chat Model
 
-Provides AI reasoning for the supervisor.
+Provides the AI reasoning and decision-making capability for the Supervisor Agent.
 
 6. Google Sheets Tool
 
-Looks up contact details.
+Looks up saved contact details such as name, email, phone number, or company.
 
 7. Gmail Tool
 
-Sends emails.
+Sends emails when the user requests email-based actions.
 
 8. Google Calendar Tool
 
-Creates calendar events.
+Creates calendar events and schedules meetings based on user instructions.
 
 9. Research Agent
 
-Handles research/information questions.
+Handles research and informational queries by generating clear answers.
 
 10. Telegram
 
-Sends the final response back to the user.
+Sends the final response, summary, or confirmation message back to the Telegram chat.
 
 What This Workflow Achieves
 
 This workflow creates a personal AI operations assistant on Telegram that can:
 
-understand natural language,
+understand natural language
 
-search saved contacts,
+search saved contacts
 
-send emails automatically,
+send emails automatically
 
-schedule meetings,
+schedule meetings
 
-answer general questions,
+answer general questions
 
-and respond back instantly on Telegram.
+respond instantly on Telegram
+
+Features
+
+Telegram-based interaction
+
+AI-powered decision making
+
+Google Sheets contact lookup
+
+Automated Gmail sending
+
+Google Calendar scheduling
+
+Research question handling
+
+Conversation memory support
+
+Use Cases
+
+Contact lookup from a stored database
+
+Sending appointment or business emails
+
+Scheduling meetings with attendees
+
+Answering research or informational questions
+
+Automating Telegram-based assistant tasks
+
+Tools Used
+
+n8n
+
+Telegram Trigger
+
+Google Gemini Chat Model
+
+Google Sheets
+
+Gmail
+
+Google Calendar
+
+AI Agent / Research Agent
+
+Window Buffer Memory
+
+Summary
+
+The Supervisor AI Agent is a smart Telegram assistant workflow in n8n that automates communication, scheduling, contact lookup, and research tasks by using AI with connected tools like Google Sheets, Gmail, Google Calendar, and Telegram.
